@@ -25,13 +25,17 @@ function DecimalARomanos() {
         ];
 
         //Limitando el rango del imput
+        if (Number.isNaN(num)) {
+            console.log("No es un numero")
+            return
+        }
         if (num < 1) {
             console.log("El numero no puede ser menor a 1")
-            return ""
+            return  
         }
         if (num > 3999) {
             console.log("El numero no puede ser mayor a 3999")
-            return ""
+            return
         }
 
         //Itera sobre los array de numeros romanos y sus valores en decimal [string,number]
