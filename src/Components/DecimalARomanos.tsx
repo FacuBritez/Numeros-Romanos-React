@@ -54,7 +54,7 @@ function DecimalARomanos() {
     return (
         <div className="conversor text-center">
             <p>Pasar número decimal a numero romano</p>
-            <input id="numeroDecimal" placeholder="Numero decimal" defaultValue={decimal} onChange={(e) => setDecimal(Number(e.target.value))} />
+            <input id="numeroDecimal" placeholder="Numero decimal" defaultValue={''} onChange={(e) => setDecimal(Number(e.target.value))} />
             <br />
             <button onClick={() => convertToRoman(decimal)}>Convertir a Romano</button>
             <br />
