@@ -84,13 +84,25 @@ function RomanosADecimal() {
         setRomano('');
     }
 
+    const keyDownIsEnter = (event: any) => {
+        if (event.key === 'Enter') {
+            convertToDecimal(romano)
+        }
+    }
+
 
 
 
     return (
         <div className="conversor text-center">
             <p>Pasar número romano a numero decimal</p>
-            <input id="numeroRomano" placeholder="Numero romano" defaultValue={romano} onChange={(e) => setRomano(e.target.value)} />
+            <input
+                id="numeroRomano"
+                placeholder="Numero romano"
+                defaultValue={romano}
+                onChange={(e) => setRomano(e.target.value)}
+                onKeyDown={keyDownIsEnter}
+                />
             <br />
             <button onClick={() => convertToDecimal(romano)}>Convertir a decimal</button>
             <br />

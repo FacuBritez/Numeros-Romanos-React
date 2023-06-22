@@ -31,7 +31,7 @@ function DecimalARomanos() {
         }
         if (num < 1) {
             console.log("El numero no puede ser menor a 1")
-            return  
+            return
         }
         if (num > 3999) {
             console.log("El numero no puede ser mayor a 3999")
@@ -53,12 +53,22 @@ function DecimalARomanos() {
         setDecimal(0)
     }
 
-
+    const keyDownIsEnter = (event: any) => {
+        if (event.key === 'Enter') {
+            convertToRoman(decimal)
+        }
+    }
 
     return (
         <div className="conversor text-center">
             <p>Pasar número decimal a numero romano</p>
-            <input id="numeroDecimal" placeholder="Numero decimal" defaultValue={''} onChange={(e) => setDecimal(Number(e.target.value))} />
+            <input
+                id="numeroDecimal"
+                placeholder="Numero decimal"
+                defaultValue={''}
+                onChange={(e) => setDecimal(Number(e.target.value))}
+                onKeyDown={keyDownIsEnter}
+            />
             <br />
             <button onClick={() => convertToRoman(decimal)}>Convertir a Romano</button>
             <br />
